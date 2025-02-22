@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Details Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Ubuntu&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/afea27c44a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar-white">
+        <img src="images/website image/logo-red.png" class="logo">
+        <ul class="nav-links">
+            <li><a href="#" class="active">Popular Places</a></li>
+            <li><a href="#" class="active">Travel Outside</a></li>
+            <li><a href="/listing.html" class="active" target="_blank">Online Packages</a></li>
+        </ul>
+        <a href="#" class="register-btn">Register Now</a>
+        <i class="fa-solid fa-bars" onclick="togglebtn()"></i>
+    </nav>
+    <div class="house-details">
+        <div class="house-title">
+            <h1>Wenge House</h1>
+            <div class="row">
+                <div>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <span>0 Reviews</span>
+                </div>
+                <div>
+                    <p>Location: lido ,Mohammadia, Alger, Algiers</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <div class="gallery-img-1"><img src="images/lido down/down dar 3 (1).jpg"></div>
+            <div><img src="images/lido down/dar down 1.jpg"></div>
+            <div><img src="images/lido down/down dar 5.jpg"></div>
+            <div><img src="images/lido down/down dar 3 (1).jpg"></div>
+            <div><img src="images/lido down/down dar 7.jpg"></div>
+        </div>
+        <div class="small-details">
+            <h2>Logement entier. Hôte : Rachida</h2>
+            <p>2 guest &nbsp; &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p>
+            <h4>8000 DA / day</h4>
+        </div>
+        <hr class="line">
+        
+        <ul class="details-list">
+            <li><i class="fa-solid fa-house-chimney"></i>Maison entière
+                <span>Vous aurez tout l'appartement pour vous.</span>
+            </li>
+            <li><i class="fa-solid fa-paintbrush"></i>Nettoyage amélioré
+                <span>Cet hôte s'est engagé à suivre le processus de nettoyage de nous.</span>
+            </li>
+            <li><i class="fa-solid fa-location-dot"></i>Très bien situé
+                <span>90 % des clients récents ont attribué à l'établissement une note de 5 étoiles.</span>
+            </li>
+            <li><i class="fa-solid fa-heart"></i>Excellente expérience d'enregistrement
+                <span>100 % des clients récents ont attribué une note de 5 étoiles au processus d'enregistrement.</span>
+            </li>
+        </ul>
+
+        <hr class="line">
+        <p class="home-desc">Les invités seront répartis au rez-de-chaussée en fonction des disponibilités. Vous obtenez un appartement confortable de deux chambres avec un véritable sentiment de ville. Le prix indiqué est pour deux personnes. Au niveau du créneau invité, veuillez indiquer le nombre d'invités pour obtenir le prix exact pour les groupes.</p>
+        <hr class="line">
+
+        <div class="map">
+            <h3>Location on Map</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d1024.7752604103864!2d3.1703775221224135!3d36.7434137519024!3m2!1i1024!2i768!4f13.1!2m1!1slido!5e1!3m2!1sfr!2sdz!4v1738246282130!5m2!1sfr!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <b>Alger , Mohammdia .Lido</b>
+            <p>regarder Le Maps </p>
+        </div>
+
+        <hr class="line">
+
+        <div class="host">
+            <img src="images/the hoster2.jpg">
+            <div>
+                <h2>Hosted by Rachida</h2>
+                <p><span>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star-half-stroke"></i>
+                
+            </div>
+        </div>
+        <a href="Contactus.html" class="contact-host">Contact Host</a>
+    </div>
+    <div class="container">
+        <div class="footer">
+            <a href="https://www.facebook.com/profile.php?id=100035939597294#" target="_blank"><i
+                    class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.youtube.com/channel/UC06sFA3dp5IrwE9OHDDDSag" target="_blank"><i
+                    class="fa-brands fa-youtube"></i></a>
+            <a href="https://twitter.com/RitikKu17456993" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/ritik-2002/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.instagram.com/riti_k2002/?hl=en" target="_blank"><i
+                    class="fa-brands fa-instagram"></i></a>
+            <hr>
+            <p>Copyright &copy; 2024, AbdouGdev</p>
+        </div>
+    </div>
+
+    <script>
+        var navBar = document.getElementById("navbar");
+
+        function togglebtn() {
+            navBar.classList.toggle("hidemenu")
+        }
+    </script>
+</body>
+
+</html>
