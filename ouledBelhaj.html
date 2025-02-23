@@ -17,12 +17,9 @@
     <nav id="navbar" class="navbar-white">
         <ul class="nav-links">
             <img src="images/website image/logo-red.png" class="logo">
-            <li><a href="#" class="active">Popular Places</a></li>
-            <li><a href="#" class="active">Travel Outside</a></li>
-            <li><a href="/listing.html" class="active" target="_blank">Online Packages</a></li>
+            
         </ul>
-        <a href="#" class="register-btn">Register Now</a>
-        <i class="fa-solid fa-bars" onclick="togglebtn()"></i>
+       
     </nav>
     <div class="house-details">
         <div class="house-title">
@@ -41,13 +38,139 @@
                 </div>
             </div>
         </div>
-        <div class="gallery">
-            <div class="gallery-img-1"><img src="images/ouled bel7aj/ouled bel7aj Front.jpg"></div>
-            <div><img src="images/ouled bel7aj/ouledbelhaj 1.jpg"></div>
-            <div><img src="images/ouled bel7aj/ouledbelhaj 2.jpg"></div>
-        <div><img src="images/ouled bel7aj/ouledbelhaj 3.jpg"></div>
-            <div><img src="images/ouled bel7aj/ouledbelhaj 4.jpg"></div>
-        </div>
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie d'images</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            font-size: 30px;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .prev { left: 20px; }
+        .next { right: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="gallery">
+    <img src="images/ouled bel7aj/ouled bel7aj Front.jpg" onclick="openLightbox(0)">
+    <img src="images/ouled bel7aj/ouledbelhaj 1.jpg" onclick="openLightbox(1)">
+    <img src="images/ouled bel7aj/ouledbelhaj 2.jpg" onclick="openLightbox(2)">
+    <img src="images/ouled bel7aj/ouledbelhaj 3.jpg" onclick="openLightbox(3)">
+    <img src="images/ouled bel7aj/ouledbelhaj 4.jpg" onclick="openLightbox(4)">
+    <img src="images/ouled bel7aj/1q.jpeg" onclick="openLightbox(5)">
+    <img src="images/ouled bel7aj/2q.jpeg" onclick="openLightbox(6)">
+    <img src="images/ouled bel7aj/3q.jpeg" onclick="openLightbox(7)">
+    <img src="images/ouled bel7aj/4q.jpeg" onclick="openLightbox(8)">
+    <img src="images/ouled bel7aj/5q.jpeg" onclick="openLightbox(9)">
+    <img src="images/ouled bel7aj/6q.jpeg" onclick="openLightbox(10)">
+    <img src="images/ouled bel7aj/7q.jpeg" onclick="openLightbox(11)">
+    <img src="images/ouled bel7aj/9q.jpeg" onclick="openLightbox(12)">
+    <img src="images/ouled bel7aj/10q.jpeg" onclick="openLightbox(13)">
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-img">
+    <span class="next" onclick="changeImage(1)">&#10095;</span>
+</div>
+
+<script>
+    let currentIndex = 0;
+    let images = document.querySelectorAll(".gallery img");
+    let lightbox = document.getElementById("lightbox");
+    let lightboxImg = document.getElementById("lightbox-img");
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightbox.style.display = "flex";
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = "none";
+    }
+
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        } else if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+    document.addEventListener("keydown", (event) => {
+        if (lightbox.style.display === "flex") {
+            if (event.key === "ArrowRight") {
+                changeImage(1);
+            } else if (event.key === "ArrowLeft") {
+                changeImage(-1);
+            } else if (event.key === "Escape") {
+                closeLightbox();
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
+
         <div class="small-details">
             <h2>Logement entier. Hôte : Rachida</h2>
             <p>2 guest &nbsp; &nbsp; 2 beds &nbsp; &nbsp; 1 bathroom</p>
@@ -82,31 +205,14 @@
 
         <hr class="line">
 
-        <div class="host">
-            <img src="images/the hoster2.jpg">
-            <div>
-                <h2>Hosted by Rachida</h2>
-                <p><span>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star-half-stroke"></i>
-                    </span>&nbsp; &nbsp; 0 reviews</p>
-            </div>
-        </div>
+        
         <a href="Contactus.html" class="contact-host">Contact Host</a>
     </div>
     <div class="container">
         <div class="footer">
             <a href="https://www.facebook.com/profile.php?id=100035939597294#" target="_blank"><i
                     class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.youtube.com/channel/UC06sFA3dp5IrwE9OHDDDSag" target="_blank"><i
-                    class="fa-brands fa-youtube"></i></a>
-            <a href="https://twitter.com/RitikKu17456993" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-            <a href="https://www.linkedin.com/in/ritik-2002/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="https://www.instagram.com/riti_k2002/?hl=en" target="_blank"><i
-                    class="fa-brands fa-instagram"></i></a>
+            
             <hr>
             <p>Copyright &copy; 2024, AbdouGdev</p>
         </div>
